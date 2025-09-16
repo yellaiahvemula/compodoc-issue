@@ -1,0 +1,28 @@
+{
+  "name": "compodoc-issue",
+  "version": "1.0.0",
+  "description": "checking compodoc issue with functions or methods inside a class",
+  "main": "index.js",
+  "scripts": {
+    "compodoc:build": "npx compodoc -p tsconfig.doc.json",
+    "compodoc:serve": "npx compodoc -p tsconfig.doc.json -s"
+  },
+  "devDependencies": {
+    "@compodoc/compodoc": "^1.1.30",
+    "nx": "~20.6.3"
+  },
+  "engines": {
+    "node": "^22.14.0",
+    "npm": "^10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yellaiahvemula/compodoc-issue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yellaiahvemula/compodoc-issue/issues"
+  },
+  "homepage": "https://github.com/yellaiahvemula/compodoc-issue#readme"
+}
