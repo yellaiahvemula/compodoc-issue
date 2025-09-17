@@ -170,6 +170,20 @@ export class AppModule { }</code></pre></div>
     <table class="table table-sm table-bordered index-table">
         <tbody>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getExampleOption" >getExampleOption</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -268,7 +282,70 @@ const service = new ExampleService(null);</code></pre></div>
         </table>
 </section>
 
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getExampleOption"></a>
+                    <span class="name">
+                        <span ><b>getExampleOption</b></span>
+                        <a href="#getExampleOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getExampleOption()</code>
+                </td>
+            </tr>
 
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="212"
+                                    class="link-to-prism">src/compodoc-issue-check.service.ts:212</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the example option value from the injected configuration.</p>
+<p>This method provides programmatic access to the example option configuration
+value by calling the exampleOption getter property. It serves as an alternative
+method-based approach to accessing the configuration value when property
+access syntax is not preferred or not available.</p>
+<p>The method delegates to the exampleOption getter, so it has the same behavior:
+if no configuration was provided during service construction or if the
+exampleOption property doesn&#39;t exist in the configuration, this method may
+return undefined.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">const configValue = this.exampleService.getExampleOption();
+if (configValue) {
+  console.log(&#39;Configuration value:&#39;, configValue);
+} else {
+  console.log(&#39;No configuration value available&#39;);
+}</code></pre></div><p>See <a href="ExampleService.exampleOption">ExampleService.exampleOption</a> for the underlying getter property
+See <a href="../miscellaneous/variables.html#ConfigurationToken">ConfigurationToken</a> for configuration injection setup</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The example option string value from the injected configuration</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
             <section data-compodoc="block-accessors">
     <h3 id="accessors">
@@ -326,6 +403,88 @@ if (option) {
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>exampleOption(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="176" class="link-to-prism">src/compodoc-issue-check.service.ts:176</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Sets the example option value in the injected configuration.</p>
+<p>This setter allows runtime modification of the example option configuration
+value. It directly updates the exampleOption property within the injected
+configuration object, making the new value immediately available through
+both the getter property and the getExampleOption() method.</p>
+<p>Note that this setter modifies the injected configuration object in place.
+If the configuration object is shared across multiple service instances,
+this change will affect all instances that reference the same configuration.</p>
+<p>If no configuration object was injected during service construction
+(injectedConfig is null or undefined), this setter will throw an error.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">// Set a new configuration value
+this.exampleService.exampleOption = &#39;new-value&#39;;
+
+
+// The new value is immediately available
+console.log(this.exampleService.exampleOption); // &#39;new-value&#39;
+console.log(this.exampleService.getExampleOption()); // &#39;new-value&#39;</code></pre></div><p>See <a href="ExampleService.exampleOption">ExampleService.exampleOption</a> for the corresponding getter property
+See <a href="ExampleService.getExampleOption">ExampleService.getExampleOption</a> for the method-based accessor</p>
+</div>
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                        <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                            <td>
+                                                                    <ul>
+<li>The new string value to set for the example option</li>
+</ul>
+
+                                                            </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                        <b>Example :</b>
+                                            <div>
+                                                <pre class="line-numbers"><code class="language-html">&lt;b&gt;Example :&lt;/b&gt;&lt;div&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;// Set a new configuration value
+this.exampleService.exampleOption = &amp;#39;new-value&amp;#39;;
+
+// The new value is immediately available
+console.log(this.exampleService.exampleOption); // &amp;#39;new-value&amp;#39;
+console.log(this.exampleService.getExampleOption()); // &amp;#39;new-value&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</code></pre>
+                                            </div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
             </tbody>
         </table>
 </section>
@@ -461,6 +620,81 @@ export class ExampleService {
      */
     get exampleOption(): string {
         return this.injectedConfig.exampleOption;
+    }
+
+    /**
+     * Sets the example option value in the injected configuration.
+     * 
+     * @param value - The new string value to set for the example option
+     * 
+     * @remarks
+     * This setter allows runtime modification of the example option configuration
+     * value. It directly updates the exampleOption property within the injected
+     * configuration object, making the new value immediately available through
+     * both the getter property and the getExampleOption() method.
+     * 
+     * Note that this setter modifies the injected configuration object in place.
+     * If the configuration object is shared across multiple service instances,
+     * this change will affect all instances that reference the same configuration.
+     * 
+     * If no configuration object was injected during service construction
+     * (injectedConfig is null or undefined), this setter will throw an error.
+     * 
+     * @example
+     * &#x60;&#x60;&#x60;typescript
+     * // Set a new configuration value
+     * this.exampleService.exampleOption &#x3D; &#x27;new-value&#x27;;
+     * 
+     * // The new value is immediately available
+     * console.log(this.exampleService.exampleOption); // &#x27;new-value&#x27;
+     * console.log(this.exampleService.getExampleOption()); // &#x27;new-value&#x27;
+     * &#x60;&#x60;&#x60;
+     * 
+     * @throws {TypeError} When attempting to set a property on null or undefined injectedConfig
+     * 
+     * @see {@link ExampleService.exampleOption} for the corresponding getter property
+     * @see {@link ExampleService.getExampleOption} for the method-based accessor
+     * 
+     * @public
+     */
+    set exampleOption(value: string) {
+        this.injectedConfig.exampleOption &#x3D; value;
+    }
+
+
+    /**
+     * Retrieves the example option value from the injected configuration.
+     * 
+     * @returns The example option string value from the injected configuration
+     * 
+     * @remarks
+     * This method provides programmatic access to the example option configuration
+     * value by calling the exampleOption getter property. It serves as an alternative
+     * method-based approach to accessing the configuration value when property
+     * access syntax is not preferred or not available.
+     * 
+     * The method delegates to the exampleOption getter, so it has the same behavior:
+     * if no configuration was provided during service construction or if the
+     * exampleOption property doesn&#x27;t exist in the configuration, this method may
+     * return undefined.
+     * 
+     * @example
+     * &#x60;&#x60;&#x60;typescript
+     * const configValue &#x3D; this.exampleService.getExampleOption();
+     * if (configValue) {
+     *   console.log(&#x27;Configuration value:&#x27;, configValue);
+     * } else {
+     *   console.log(&#x27;No configuration value available&#x27;);
+     * }
+     * &#x60;&#x60;&#x60;
+     * 
+     * @see {@link ExampleService.exampleOption} for the underlying getter property
+     * @see {@link ConfigurationToken} for configuration injection setup
+     * 
+     * @public
+     */
+    getExampleOption(): string {
+        return this.exampleOption;
     }
 }
 </code></pre>

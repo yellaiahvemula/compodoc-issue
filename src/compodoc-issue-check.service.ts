@@ -137,4 +137,79 @@ export class ExampleService {
     get exampleOption(): string {
         return this.injectedConfig.exampleOption;
     }
+
+    /**
+     * Sets the example option value in the injected configuration.
+     * 
+     * @param value - The new string value to set for the example option
+     * 
+     * @remarks
+     * This setter allows runtime modification of the example option configuration
+     * value. It directly updates the exampleOption property within the injected
+     * configuration object, making the new value immediately available through
+     * both the getter property and the getExampleOption() method.
+     * 
+     * Note that this setter modifies the injected configuration object in place.
+     * If the configuration object is shared across multiple service instances,
+     * this change will affect all instances that reference the same configuration.
+     * 
+     * If no configuration object was injected during service construction
+     * (injectedConfig is null or undefined), this setter will throw an error.
+     * 
+     * @example
+     * ```typescript
+     * // Set a new configuration value
+     * this.exampleService.exampleOption = 'new-value';
+     * 
+     * // The new value is immediately available
+     * console.log(this.exampleService.exampleOption); // 'new-value'
+     * console.log(this.exampleService.getExampleOption()); // 'new-value'
+     * ```
+     * 
+     * @throws {TypeError} When attempting to set a property on null or undefined injectedConfig
+     * 
+     * @see {@link ExampleService.exampleOption} for the corresponding getter property
+     * @see {@link ExampleService.getExampleOption} for the method-based accessor
+     * 
+     * @public
+     */
+    set exampleOption(value: string) {
+        this.injectedConfig.exampleOption = value;
+    }
+
+
+    /**
+     * Retrieves the example option value from the injected configuration.
+     * 
+     * @returns The example option string value from the injected configuration
+     * 
+     * @remarks
+     * This method provides programmatic access to the example option configuration
+     * value by calling the exampleOption getter property. It serves as an alternative
+     * method-based approach to accessing the configuration value when property
+     * access syntax is not preferred or not available.
+     * 
+     * The method delegates to the exampleOption getter, so it has the same behavior:
+     * if no configuration was provided during service construction or if the
+     * exampleOption property doesn't exist in the configuration, this method may
+     * return undefined.
+     * 
+     * @example
+     * ```typescript
+     * const configValue = this.exampleService.getExampleOption();
+     * if (configValue) {
+     *   console.log('Configuration value:', configValue);
+     * } else {
+     *   console.log('No configuration value available');
+     * }
+     * ```
+     * 
+     * @see {@link ExampleService.exampleOption} for the underlying getter property
+     * @see {@link ConfigurationToken} for configuration injection setup
+     * 
+     * @public
+     */
+    getExampleOption(): string {
+        return this.exampleOption;
+    }
 }
