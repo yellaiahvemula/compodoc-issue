@@ -8,6 +8,7 @@
     "compodoc:serve": "npx compodoc -p tsconfig.doc.json -s"
   },
   "devDependencies": {
+    "@angular/core": "^19.2.0",
     "@compodoc/compodoc": "^1.1.30",
     "nx": "~20.6.3"
   },
